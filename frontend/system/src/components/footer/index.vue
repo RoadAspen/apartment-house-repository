@@ -1,7 +1,7 @@
 <template>
 	<a-layout-footer
 		class="flex items-center justify-center h-[40] color-[var(--color-text-2)] text-center"
-		>Arco Pro</a-layout-footer
+		>尚寓@2024</a-layout-footer
 	>
 </template>
 

@@ -1,82 +1,21 @@
 <template>
-	<div class="banner">
-		<div class="banner-inner">
-			<a-carousel class="carousel" animation-name="fade">
-				<a-carousel-item v-for="item in carouselItem" :key="item.slogan">
-					<div :key="item.slogan" class="carousel-item">
-						<div class="carousel-title">{{ item.slogan }}</div>
-						<div class="carousel-sub-title">{{ item.subSlogan }}</div>
-						<img class="carousel-image" :src="item.image" />
-					</div>
-				</a-carousel-item>
-			</a-carousel>
+	<div class="flex items-center justify-center h-full w-[550px] bg-[#00308f]">
+		<div class="flex flex-col items-center justify-center">
+			<div class="font-bold text-[20px] line-[28px] text-white mb-3">
+				公寓后端管理系统
+			</div>
+			<div
+				class="margin-top-[10px] text-[14px] line-[22px] text-[var(--color-text-3)]"
+			>
+				提供一站式的公寓管理解决方案
+			</div>
+			<img class="w-[320px] mt-[30px]" :src="bannerImage" />
 		</div>
 	</div>
 </template>
 
 <script lang="ts" setup>
-	import { computed } from 'vue';
 	import bannerImage from '@/assets/images/login-banner.png';
-
-	const carouselItem = computed(() => [
-		{
-			slogan: 1,
-			subSlogan: 2,
-			image: bannerImage,
-		},
-		{
-			slogan: 1,
-			subSlogan: 2,
-			image: bannerImage,
-		},
-		{
-			slogan: 1,
-			subSlogan: 2,
-			image: bannerImage,
-		},
-	]);
 </script>
 
-<style lang="less" scoped>
-	.banner {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		&-inner {
-			flex: 1;
-			height: 100%;
-		}
-	}
-
-	.carousel {
-		height: 100%;
-
-		&-item {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: 100%;
-		}
-
-		&-title {
-			color: var(--color-fill-1);
-			font-weight: 500;
-			font-size: 20px;
-			line-height: 28px;
-		}
-
-		&-sub-title {
-			margin-top: 8px;
-			color: var(--color-text-3);
-			font-size: 14px;
-			line-height: 22px;
-		}
-
-		&-image {
-			width: 320px;
-			margin-top: 30px;
-		}
-	}
-</style>
+<style lang="less" scoped></style>
