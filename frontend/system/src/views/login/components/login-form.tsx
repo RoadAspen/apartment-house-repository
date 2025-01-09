@@ -26,9 +26,13 @@ export default defineComponent({
     };
 
     return () => (
-      <div class="w-[320px]">
-        <div class="size-6 text-bold text-[var(--color-text-1)]">登录</div>
-        <div class="size-4 text-[var(--color-text-3)]">开始登录</div>
+      <div class="w-[320px] p-4">
+        <div class="text-[24px] text-bold text-[var(--color-text-1)] text-center">
+          登录
+        </div>
+        <div class="text-[16px] text-[var(--color-text-3)]  text-center">
+          开始登录
+        </div>
         <div class="h-8 text-[rgb(var(--red-6))]">{errorMessage.value}</div>
         <a-form
           ref="loginForm"

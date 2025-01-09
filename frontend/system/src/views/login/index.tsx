@@ -14,7 +14,7 @@ const login = () => {
       </div>
       <LoginBanner />
       <div class="relative flex flex-1 items-center justify-center pb-[40px]">
-        <div class="content-inner">
+        <div class="shadow-lg shadow-gray-500/50">
           <LoginForm />
         </div>
         <div class="absolute bottom-4 right-0 w-full">

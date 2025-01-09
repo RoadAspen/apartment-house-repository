@@ -1,13 +1,10 @@
 import Mock from 'mockjs';
 
-Mock.mock('/api/user', 'get', {
-	code: 200,
-	message: 'success',
-	data: {
-		name: 'Arco',
-		age: 20,
-	},
+Mock.mock('/api/login', 'post', {
+  code: 200,
+  msg: 'sucess',
+  data: {}
 });
 Mock.setup({
-	timeout: '600-1000',
+  timeout: '600-1000'
 });
