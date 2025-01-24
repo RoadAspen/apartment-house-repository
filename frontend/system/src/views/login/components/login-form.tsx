@@ -19,6 +19,7 @@ export default defineComponent({
 
     const handleSubmit = async () => {
       // 登录逻辑
+      router.push('/moms');
     };
 
     const setRememberPassword = (value: boolean) => {

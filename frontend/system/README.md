@@ -76,4 +76,12 @@ system
 - Pinia
 - Axios
 - Typescript
-- arco-design
+- ant-design-vue
+- Eslint
+- Stylelint
+- Prettier
+- Commitlint
+- Tailwindcss
+- Postcss
+- Vite
+- Pnpm

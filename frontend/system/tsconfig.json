@@ -18,6 +18,6 @@
     "lib": ["es2020", "dom"],
     "skipLibCheck": true
   },
-  "include": ["src/**/*", "src/**/*.vue", "config/constants.ts"],
+  "include": ["src/**/*", "src/**/*.vue", "config/constants.ts", "src/mock"],
   "exclude": ["node_modules"]
 }

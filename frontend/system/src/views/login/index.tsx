@@ -10,7 +10,9 @@ const login = () => {
           alt="logo"
           src="https://p3-armor.byteimg.com/tos-cn-i-49unhts6dw/dfdba5317c0c20ce20e64fac803d52bc.svg~tplv-49unhts6dw-image.image"
         />
-        <div class="mr-1 ml-1 text-[var(--color-fill-1)] text-[30px]">尚寓</div>
+        <div class="mr-1 ml-1 !text-[linear-gradient(120deg, #bd34fe 30%, #41d1ff)] text-[30px] ">
+          尚寓
+        </div>
       </div>
       <LoginBanner />
       <div class="relative flex flex-1 items-center justify-center pb-[40px]">
