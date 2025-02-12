@@ -54,8 +54,8 @@ Mock.mock(/\/api\/v1\/transcripts\/xxxxxx\/moms/, 'post', {
   data: Random.cparagraph(40, 50)
 });
 
-// 获取转义文本列表
-Mock.mock(/\/api\/v1\/transcripts\/xxxxxx\/moms/, 'get', {
+// 编辑转义文本
+Mock.mock(/\/api\/v1\/transcripts\/xxxxxx\/sentences\/xxxxxx/, 'PUT', {
   ...SuccessData,
-  data: Random.cparagraph(40, 50)
+  data: Random.ctitle(10, 20)
 });

@@ -1,10 +1,10 @@
 /**
  * 智能会议纪要生成历史记录 二阶表格
  */
-import type { IMomItem } from '@/api/llmMom';
+import type { IMomItem, TranscriptId } from '@/api/llmMom';
 import { Button, Table } from 'ant-design-vue';
 import type { ColumnType } from 'ant-design-vue/es/table';
-import { defineComponent, ref, toRefs } from 'vue';
+import { defineComponent, ref, toRefs, type PropType } from 'vue';
 import MomModal from './mom.modal';
 
 export default defineComponent({
@@ -13,10 +13,14 @@ export default defineComponent({
     dataSource: {
       required: true,
       type: Array<IMomItem>
+    },
+    transcriptId: {
+      required: true,
+      type: [String, null] as PropType<TranscriptId>
     }
   },
   setup(props) {
-    const { dataSource } = toRefs(props);
+    const { dataSource, transcriptId } = toRefs(props);
     const columns: ColumnType[] = [
       {
         key: 'momId',
@@ -78,6 +82,7 @@ export default defineComponent({
           }}
         />
         <MomModal
+          transcriptId={transcriptId.value}
           visible={momsVisible.value}
           handleClose={handleCloseMomsModal}
         />

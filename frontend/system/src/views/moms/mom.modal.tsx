@@ -1,7 +1,7 @@
 /**
  * 會議紀要結果彈窗
  */
-import { getMomsByTranscriptId } from '@/api/llmMom';
+import { getMomsByTranscriptId, type TranscriptId } from '@/api/llmMom';
 import { Modal } from 'ant-design-vue';
 import {
   defineComponent,
@@ -27,31 +27,33 @@ export default defineComponent({
       default: false
     },
     transcriptId: {
-      type: String,
-      default: ''
+      required: true,
+      type: [String, null] as PropType<TranscriptId>,
+      default: null
     }
   },
   setup(props) {
     const { visible, transcriptId } = toRefs(props);
-    const transcriptIdRef: Ref<string> = ref(transcriptId.value);
     const summary: Ref<string> = ref('');
 
     /** 文本紀要查詢 */
     const handleGetMomsByTranscriptId = async () => {
       try {
-        const res = await getMomsByTranscriptId(transcriptIdRef.value);
-        console.log('文本紀要查詢', res);
+        if (transcriptId.value) {
+          const res = await getMomsByTranscriptId(transcriptId.value);
+          console.log('文本紀要查詢', res);
+        }
       } catch (error) {}
     };
 
     onMounted(() => {
-      //   if (transcriptIdRef.value) {
-      handleGetMomsByTranscriptId();
-      //   }
+      if (transcriptId.value) {
+        handleGetMomsByTranscriptId();
+      }
     });
 
     watch(
-      () => transcriptIdRef.value,
+      () => transcriptId.value,
       (newVal) => {
         if (newVal) {
           handleGetMomsByTranscriptId();

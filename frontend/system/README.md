@@ -23,7 +23,7 @@ system
 |    +---api // 定义接口目录
 |    +---assets // 静态资源目录
 |    |   +---images // 图片资源
-|    +---components // 组件目录
+|    +---components // 全局组件目录
 |    +---directive // vue 自定义指令
 |    +---hooks // hooks
 |    +---layout // 布局目录
@@ -52,6 +52,9 @@ system
 |    +---types // 页面类型定义
 |    +---utils // 工具类
 |    +---views // 页面
+|    |   +---home // 首页
+|    |   |   +---components // 首页组件
+|    |   |   index.tsx // 首页
 |   .env.development // 开发环境 环境变量 配置
 |   .env.production // 生产环境 环境变量 配置
 |   .eslintignore // eslint 忽略文件
@@ -70,18 +73,20 @@ system
 |   tsconfig.json // tsconfig 配置
 ```
 
-- Vue
-- Vue-router
-- JSX
-- Pinia
-- Axios
-- Typescript
-- ant-design-vue
-- Eslint
-- Stylelint
-- Prettier
-- Commitlint
-- Tailwindcss
-- Postcss
-- Vite
-- Pnpm
+## 技术栈
+
+- Vue3 框架
+- Vue-router 路由
+- JSX 语法
+- Pinia 状态管理
+- Axios 网络请求
+- Typescript 类型系统
+- ant-design-vue 组件库
+- Eslint 代码规范
+- Stylelint CSS 规范
+- Prettier 代码格式化
+- Commitlint 提交规范
+- Tailwindcss CSS 框架
+- Postcss 插件
+- Vite 构建工具
+- Pnpm 包管理工具

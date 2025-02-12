@@ -5,7 +5,7 @@ import {
   type TranscriptId
 } from '@/api/llmMom';
 import type { TableColumnsType } from 'ant-design-vue';
-import { Button, Table, Tag } from 'ant-design-vue';
+import { Button, message, Table, Tag } from 'ant-design-vue';
 import type { ColumnType } from 'ant-design-vue/es/table';
 import { defineComponent, onMounted, ref, type Ref } from 'vue';
 import SubMomHistoryTable from './subMomHistoryTable';
@@ -82,19 +82,19 @@ export default defineComponent({
     ];
 
     const translateVisible = ref(false);
+    /** 转换id */
     const transcriptId: Ref<TranscriptId> = ref(null);
     const handleClose = () => {
       translateVisible.value = false;
     };
     const handleOpen = (id: TranscriptId) => {
-      console.log('打开模板');
-
       translateVisible.value = true;
       transcriptId.value = id;
     };
 
     const handleUpload = async () => {
-      console.log('上传音频');
+      message.success('上传成功');
+      getAudioListData();
     };
 
     return () => (
@@ -105,7 +105,7 @@ export default defineComponent({
             上传音频
           </Button>
         </div>
-        <div class=" flex-1 py-10 overflow-auto">
+        <div class=" flex-1 pb-10 overflow-auto">
           <Table
             columns={columns}
             dataSource={audioList.value}
@@ -160,7 +160,12 @@ export default defineComponent({
               },
               expandedRowRender: ({ record }: { record: IAudioItem }) => {
                 if (record.moms?.length) {
-                  return <SubMomHistoryTable dataSource={record.moms || []} />;
+                  return (
+                    <SubMomHistoryTable
+                      transcriptId={transcriptId.value}
+                      dataSource={record.moms || []}
+                    />
+                  );
                 } else {
                   return null;
                 }

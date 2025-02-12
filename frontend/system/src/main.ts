@@ -1,6 +1,7 @@
 import { setupRouter } from '@/route/index';
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/reset.css';
+import { createPinia } from 'pinia';
 import { createApp } from 'vue';
 import App from './App.vue';
 import './mock/index';
@@ -13,7 +14,11 @@ const app = createApp(App);
   if (import.meta.env.DEV) {
     import('./mock');
   }
+  // 引入ant-design-vue
   app.use(Antd);
+  // 使用 pinia
+  app.use(createPinia());
+  // 注册路由，并注册路由守卫
   await setupRouter(app);
   app.mount('#app');
 })();
