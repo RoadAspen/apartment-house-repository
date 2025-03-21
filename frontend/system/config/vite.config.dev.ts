@@ -13,14 +13,14 @@ export default mergeConfig(
       open: true,
       fs: {
         strict: true
+      },
+      proxy: {
+        '/icoder-gateway': {
+          target: 'http://10.195.157.34:5006/', // 替换为你的后端地址
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/icoder-gateway/, '')
+        }
       }
-      // proxy: {
-      //   '/api': {
-      //     target: 'http://localhost:3000', // 替换为你的后端地址
-      //     changeOrigin: true,
-      //     rewrite: (path) => path.replace(/^\/api/, '')
-      //   }
-      // }
     },
     plugins: [
       eslint({
