@@ -1,0 +1,16 @@
+<!-- src/main/resources/mapper/UserMapper.xml -->
+<!-- 在 MyBatis 的 XML 映射文件中，<mapper> 标签的 namespace 必须和 Mapper 接口的 全限定类名 一致。 -->
+<mapper namespace="com.apartment.mapper.UserMapper">
+    <select id="findAll" resultType="com.apartment.entity.User">
+        SELECT * FROM user;
+    </select>
+
+    <select id="findById" resultType="com.apartment.entity.User">
+        SELECT * FROM user WHERE id = #{id};
+    </select>
+
+    <insert id="insert" parameterType="com.apartment.entity.User">
+        INSERT INTO user (username, password, email, status)
+        VALUES (#{username}, #{password}, #{email}, #{status});
+    </insert>
+</mapper>

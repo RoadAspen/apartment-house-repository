@@ -1,0 +1,23 @@
+{
+  "extends": "./node_modules/@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "strict": true,
+    "sourceMap": true,
+    "jsx": "preserve", // 或 "react"、"react-jsx"，视项目需求而定
+    "jsxFactory": "h", // Vue 3 默认是 "h"，也可能需要 "React.createElement"（取决于 JSX 配置）
+    "jsxFragmentFactory": "Fragment", // 父组件空标签
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "lib": ["ESNext", "dom"],
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*", "src/**/*.vue", "config/constants.ts", "src/mock"],
+  "exclude": ["node_modules"]
+}

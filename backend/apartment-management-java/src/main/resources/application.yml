@@ -1,0 +1,16 @@
+# 定义项目的各种配置 ，如 服务器配置、数据库配置、 日志配置
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/apartment_db?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mybatis:
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: com.apartment.entity
+  jpa:
+    hibernate:
+      ddl-auto: update # 每次启动应用时自动更新数据库
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
